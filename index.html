@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Court 테니스 코트 예약</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            width: 150px;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .container img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .container h1 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+        .container p {
+            color: #777;
+            margin-top: 10px;
+        }
+        .reservation-form {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .reservation-form select,
+        .reservation-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .reservation-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffd600;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .reservation-form button:hover {
+            background-color: #ffb600;
+        }
+        .footer {
+            margin-top: 20px;
+            color: #777;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="S Court Logo">
+    </div>
+
+    <div class="container">
+        <img src="tennis_court.jpg" alt="Tennis Court">
+        <h1>테니스 코트 예약은 S Court에서!</h1>
+        <p>정부 규제로 인해 4월까지는 특정 테니스 코트만 예약이 가능합니다.</p>
+
+        <div class="reservation-form">
+            <select>
+                <option>예약할 테니스 코트를 선택해주세요</option>
+                <!-- 테니스 코트 목록 추가 -->
+                <option>서울 - 강남구 코트</option>
+                <option>부산 - 해운대구 코트</option>
+                <option>대구 - 수성구 코트</option>
+                <!-- 추가할 수 있는 코트 목록 -->
+            </select>
+
+            <input type="date" placeholder="예약 날짜">
+            <input type="time" placeholder="예약 시간">
+            <button>예약하기</button>
+        </div>
+
+        <p class="footer">예약 내역 확인 →</p>
+
+        <div class="footer">
+            S Court 테니스 코트 전문 예약업체 | 사업자등록번호: 123-45-67890 | 주소: 서울특별시 강남구 테니스로 123, 4층 | 이메일: info@scourt.com | 대표전화: 010-1234-5678
+        </div>
+    </div>
+
+</body>
+</html>

@@ -6,105 +6,167 @@
     <title>S Court 테니스 코트 예약</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f7f9fc;
+            color: #333;
         }
         .header {
             background-color: #ffffff;
-            padding: 10px 0;
+            padding: 20px;
             text-align: center;
             border-bottom: 1px solid #ddd;
+            position: relative;
         }
-        .header img {
-            width: 150px;
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        .logo-container img {
+            width: 120px;
+            height: auto;
+            vertical-align: middle;
+        }
+        .logo-container .logo-text {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .nav-bar {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size: 16px;
+        }
+        .nav-bar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav-bar a:hover {
+            color: #007bff;
         }
         .container {
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .container img {
             width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
         .container h1 {
-            font-size: 24px;
-            color: #333;
+            font-size: 28px;
+            color: #222;
             margin-top: 20px;
+            margin-bottom: 10px;
         }
         .container p {
-            color: #777;
-            margin-top: 10px;
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
         }
         .reservation-form {
-            margin-top: 20px;
             display: inline-block;
             text-align: left;
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
         }
         .reservation-form select,
         .reservation-form input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f7f9fc;
         }
         .reservation-form button {
             width: 100%;
-            padding: 12px;
-            background-color: #ffd600;
+            padding: 15px;
+            background-color: #98FB98; /* 테니스 공과 유사한 연녹색 */
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         .reservation-form button:hover {
-            background-color: #ffb600;
+            background-color: #7cfc00; /* 약간 더 진한 녹색으로 hover 효과 */
         }
         .footer {
-            margin-top: 20px;
+            margin-top: 40px;
             color: #777;
-            font-size: 12px;
+            font-size: 14px;
             text-align: center;
+            padding: 20px;
+            background-color: #f0f2f5;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="logo.png" alt="S Court Logo">
+        <div class="logo-container">
+          <img src="images/Scourt Logo.jpg" alt="S Court Logo">
+            
+        </div>
+        <div class="nav-bar">
+            <a href="#">예약하기</a>
+            <a href="#">운동용품</a>
+            <a href="#">모임</a>
+            <a href="#">양도</a>
+            <a href="#">내정보</a>
+        </div>
     </div>
 
     <div class="container">
-        <img src="tennis_court.jpg" alt="Tennis Court">
-        <h1>테니스 코트 예약은 S Court에서!</h1>
-        <p>정부 규제로 인해 4월까지는 특정 테니스 코트만 예약이 가능합니다.</p>
+        <img src="https://www.itia.tennis/media/vymhntr1/tennis-00306-enhanced-nr.jpg?anchor=center&mode=crop&width=767" alt="Tennis Court">
+        <h1>전국 모든 테니스 코트 예약을 한번에! S Court</h1>
+        <p>S Court에서 빠르고 간편하게 Tennis Court를 예약하세요.</p>
 
         <div class="reservation-form">
             <select>
-                <option>예약할 테니스 코트를 선택해주세요</option>
+                <option>예약할 테니스 코트 지역을 선택해 주세요</option>
                 <!-- 테니스 코트 목록 추가 -->
-                <option>서울 - 강남구 코트</option>
-                <option>부산 - 해운대구 코트</option>
-                <option>대구 - 수성구 코트</option>
+                <option>서울 - 전체 코트</option>
+                <option>경기 - 전체 코트</option>
+                <option>강원 - 전체 코트</option>
+                <option>경상 - 전체 코트</option>
+                <option>전라 - 전체 코트</option>
+                <option>제주 - 전체 코트</option>
+                <option>충청 - 전체 코트</option>
                 <!-- 추가할 수 있는 코트 목록 -->
             </select>
 
             <input type="date" placeholder="예약 날짜">
             <input type="time" placeholder="예약 시간">
-            <button>예약하기</button>
+            <button>검색하기</button>
         </div>
 
-        <p class="footer">예약 내역 확인 →</p>
-
         <div class="footer">
-            S Court 테니스 코트 전문 예약업체 | 사업자등록번호: 123-45-67890 | 주소: 서울특별시 강남구 테니스로 123, 4층 | 이메일: info@scourt.com | 대표전화: 010-1234-5678
+            S Court 스포츠 및 테니스 코트 전문 예약업체 | 사업자등록번호: 123-45-67890 | 주소: 서울특별시 강남구 테니스로 123, 4층 | 이메일: info@scourt.com | 대표전화: 010-1234-5678
         </div>
     </div>
 

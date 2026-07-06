@@ -1,0 +1,60 @@
+# ============================================================
+# AI 코인 자동매매 설정 파일
+# ============================================================
+
+exchange:
+  # ccxt가 지원하는 거래소 id: binance, bybit, okx, bitget, kraken 등
+  id: binance
+  # true면 거래소 테스트넷(모의 서버)에 연결 (binance/bybit 지원)
+  testnet: true
+
+trading:
+  # 매매 모드: paper(모의투자, 기본) | live(실거래)
+  # live로 바꾸기 전에 반드시 paper로 충분히 검증할 것
+  mode: paper
+  # 감시할 코인 목록
+  symbols:
+    - BTC/USDT
+    - ETH/USDT
+    - SOL/USDT
+  # 캔들 주기: 1m, 5m, 15m, 1h, 4h, 1d
+  timeframe: 1h
+  # 매매 판단 주기 (초)
+  interval_seconds: 300
+  # 모의투자 시작 잔고 (USDT)
+  paper_balance: 10000
+
+quant:
+  # 퀀트 시그널 앙상블 가중치 (합계는 자동 정규화됨)
+  weights:
+    trend: 0.30        # 이동평균 추세추종
+    momentum: 0.25     # RSI + MACD 모멘텀
+    mean_reversion: 0.25  # 볼린저밴드 평균회귀
+    volume: 0.20       # 거래량 확인
+  # 종합 점수가 이 값 이상이면 매수 후보, -값 이하면 매도 후보 (0~1)
+  entry_threshold: 0.35
+
+ai:
+  # AI 어드바이저 사용 여부. false면 퀀트 시그널만으로 매매
+  enabled: true
+  model: claude-sonnet-5
+  # AI 확신도(0~100)가 이 값 미만이면 거래 보류
+  min_confidence: 60
+
+risk:
+  # 한 포지션에 투입할 잔고 비율 (0.1 = 10%)
+  position_size_pct: 0.10
+  # 최대 동시 보유 포지션 수
+  max_positions: 3
+  # 손절 비율 (0.03 = -3%)
+  stop_loss_pct: 0.03
+  # 익절 비율 (0.06 = +6%)
+  take_profit_pct: 0.06
+  # 일일 손실 한도. 하루 손실이 이 비율을 넘으면 당일 매매 중단 (0.05 = -5%)
+  daily_loss_limit_pct: 0.05
+  # 최소 주문 금액 (USDT)
+  min_order_usdt: 10
+
+notify:
+  # 텔레그램 알림 사용 여부 (.env에 토큰 필요)
+  telegram: false
